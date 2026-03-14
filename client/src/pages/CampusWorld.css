@@ -1,0 +1,191 @@
+
+
+
+/* Title */
+
+.campus-title {
+  font-size: 32px;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.campus-world img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+/* Campus map area */
+/* Main container */
+.campus-container{
+  width:100%;
+  height:calc(100vh - 80px);
+  overflow:auto; /* allow vertical scroll if needed */
+  background:#020617;
+}
+
+.campus-map{
+  position:relative;
+  width:100%;
+}
+
+.campus-bg{
+  width:100%;
+  height:auto;   /* keeps original ratio */
+  display:block;
+}
+
+.building{
+  position:absolute;
+  width:240px;
+  z-index:2;
+  cursor:pointer;
+}
+/* Hover glow */
+
+.building:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 20px rgba(0,255,255,0.4));
+}
+
+/* Zoom animation when clicked */
+
+.zoom {
+  transform: scale(1.8);
+  z-index: 10;
+  transition: transform 0.5s ease;
+}
+
+/* Entrance animation */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered load effect */
+
+.codecore { animation-delay: 0.2s; }
+.python { animation-delay: 0.4s; }
+.java { animation-delay: 0.6s; }
+.scorecard { animation-delay: 0.8s; }
+.battle { animation-delay: 1s; }
+
+/* Building positions */
+.college{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  z-index:1;
+}
+
+.codecore {
+  top: 120px;
+  left: 150px;
+  width: 300px;
+}
+
+.python {
+  top: 90px;
+  left: 550px;
+  width :300px;
+}
+
+.java {
+  top: 150px;
+  left: 850px;
+  width: 280px;
+}
+
+.battle {
+  top: 500px;
+  left: 300px;
+  width :300px;
+}
+
+.scorecard {
+  top: 480px;
+  left: 800px;
+  width:300px;
+}
+
+.lab-modal{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.lab-card{
+  background:#111a2e;
+  padding:30px;
+  border-radius:12px;
+  width:400px;
+  color:#e6f0ff;
+}
+
+.lab-card h2{
+  margin-bottom:10px;
+}
+
+.lab-card ul{
+  margin-top:10px;
+}
+
+.lab-card button{
+  margin-top:15px;
+  padding:8px 16px;
+  border:none;
+  background:#4cc9f0;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.lab-label{
+  position:absolute;
+  font-weight:600;
+  font-size:20px;
+
+  /* Sora / neon cyan color */
+  color:#22d3ee;
+
+  /* remove background */
+  background:none;
+
+  /* remove padding */
+  padding:0;
+
+  border:none;
+
+  /* glowing effect */
+  text-shadow:
+    0 0 6px rgba(34, 75, 238, 0.8),
+    0 0 12px rgba(34, 75, 238, 0.8),
+    0 0 20px rgba(34, 75, 238, 0.8);
+
+  letter-spacing:1px;
+}
+
+.lab-label:hover{
+  color:#678ef9;
+  text-shadow:
+    0 0 10px #678ef9,
+    0 0 20px #678ef9,
+    0 0 40px #678ef9;
+
+  transform:scale(1.05);
+  cursor:pointer;
+}

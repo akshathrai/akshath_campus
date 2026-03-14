@@ -6,6 +6,9 @@ import Dashboard from './pages/Dashboard'
 import Labs      from './pages/Labs'
 import Lab       from './pages/Lab'
 import Workspace from './pages/Workspace'
+import CampusWorld from "./pages/CampusWorld";
+
+
 
 export default function App() {
   return (
@@ -17,6 +20,8 @@ export default function App() {
       <Route path="/labs"      element={<Labs />} />
       <Route path="/labs/:labId" element={<Lab />} />
       <Route path="/workspace" element={<Workspace />} />
+      <Route path="/campus" element={<CampusWorld />} />
+    
     </Routes>
   )
 }

@@ -1,0 +1,30 @@
+.lab-page {
+  min-height: 100vh;
+  background: #f6f9fc;   /* light white background */
+  padding: 40px;
+}
+
+.level-card{
+  background:white;
+  border-radius:14px;
+  padding:20px;
+  border:1px solid #e6edf5;
+  transition:0.3s;
+}
+
+.level-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+.btn-start-level{
+  background:#48CAE4;
+  color:white;
+  padding:10px 16px;
+  border-radius:8px;
+  text-decoration:none;
+}
+
+.btn-start-level:hover{
+  background:#0096C7;
+}

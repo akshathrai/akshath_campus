@@ -69,7 +69,7 @@ a { color: inherit; text-decoration: none; }
    HEADER
    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .site-header {
-  background: rgba(10,10,15,0.85);
+  background: white;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
@@ -128,7 +128,7 @@ a { color: inherit; text-decoration: none; }
    FOOTER
    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .site-footer {
-  background: var(--bg-surface);
+  background: white;
   border-top: 1px solid var(--border);
   margin-top: auto;
 }
@@ -754,4 +754,29 @@ a { color: inherit; text-decoration: none; }
 }
 .rich-text-display p {
   margin-bottom: 12px;
+}
+body {
+  background-color: #0F172A;
+  color: white;
+  font-family: Arial;
+}
+
+.admin-container {
+  padding: 30px;
+}
+
+table {
+  width: 100%;
+  background: #1E293B;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+th {
+  background: #111827;
+  color: #38BDF8;
+}
+
+td, th {
+  padding: 12px;
 }

@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pymysql
+sqlalchemy
+jinja2
+python-multipart
+cryptography
+Pillow
+httpx
+passlib[bcrypt]
+docker
