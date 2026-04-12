@@ -1,191 +1,256 @@
+/* =========================
+   CAMPUS MAP
+========================= */
 
-
-
-/* Title */
-
-.campus-title {
-  font-size: 32px;
-  margin-bottom: 40px;
-  letter-spacing: 1px;
-}
-
-.campus-world img{
-  width:100%;
-  height:auto;
-  object-fit:contain;
-}
-/* Campus map area */
-/* Main container */
 .campus-container{
   width:100%;
-  height:calc(100vh - 80px);
-  overflow:auto; /* allow vertical scroll if needed */
+  height:calc(100vh - 70px);
+  overflow:hidden;
   background:#020617;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-.campus-map{
-  position:relative;
+.campus-stage-wrap{
   width:100%;
+  height:100%;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.campus-stage{
+  position:absolute;
+  left:50%;
+  top:50%;
+  will-change: transform;
 }
 
 .campus-bg{
   width:100%;
-  height:auto;   /* keeps original ratio */
+  height:100%;
   display:block;
 }
+
+/* Buildings */
 
 .building{
   position:absolute;
   width:240px;
   z-index:2;
   cursor:pointer;
-}
-/* Hover glow */
-
-.building:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 20px rgba(0,255,255,0.4));
+  transition:0.3s;
 }
 
-/* Zoom animation when clicked */
-
-.zoom {
-  transform: scale(1.8);
-  z-index: 10;
-  transition: transform 0.5s ease;
+.building:hover{
+  transform:scale(1.05);
+  filter:drop-shadow(0 0 20px rgba(0,255,255,0.4));
 }
-
-/* Entrance animation */
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Staggered load effect */
-
-.codecore { animation-delay: 0.2s; }
-.python { animation-delay: 0.4s; }
-.java { animation-delay: 0.6s; }
-.scorecard { animation-delay: 0.8s; }
-.battle { animation-delay: 1s; }
 
 /* Building positions */
-.college{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  z-index:1;
+
+.codecore{
+  top:30px;
+  left:350px;
+  width:320px;
 }
 
-.codecore {
-  top: 120px;
-  left: 150px;
-  width: 300px;
+.python{
+  top:10px;
+  left:750px;
+  width:320px;
 }
 
-.python {
-  top: 90px;
-  left: 550px;
-  width :300px;
+.java{
+  top:250px;
+  left:500px;
+  width:320px;
 }
 
-.java {
-  top: 150px;
-  left: 850px;
-  width: 280px;
+.battle{
+  top:180px;
+  left:150px;
+  width:350px;
 }
 
-.battle {
-  top: 500px;
-  left: 300px;
-  width :300px;
+.scorecard{
+  top:150px;
+  left:1000px;
+  width:350px;
 }
 
-.scorecard {
-  top: 480px;
-  left: 800px;
-  width:300px;
+/* =========================
+   LEVELS PAGE
+========================= */
+
+.levels-page{
+  background:#F4F4F2;
+  min-height:100vh;
+  padding:60px;
+  text-align:center;
 }
 
-.lab-modal{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.6);
+.levels-page h1{
+  color:#48cae4;
+  margin-bottom:60px;
+  font-size:40px;
+}
+
+/* path container */
+
+.levels-path{
   display:flex;
-  justify-content:center;
+  flex-direction:column;
   align-items:center;
+  gap:80px;
+  position:relative;
 }
 
-.lab-card{
-  background:#111a2e;
-  padding:30px;
-  border-radius:12px;
-  width:400px;
-  color:#e6f0ff;
+/* level node */
+
+.level-node{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  cursor:pointer;
+  position:relative;
 }
 
-.lab-card h2{
-  margin-bottom:10px;
+/* level circle */
+
+.circle{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  background:#7aa2ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  color:white;
+  font-weight:bold;
+  box-shadow:0 6px 20px rgba(0,0,0,0.15);
+  transition:0.3s;
 }
 
-.lab-card ul{
+/* hover effect */
+
+.circle:hover{
+  transform:scale(1.1);
+  background:#48cae4;
+}
+
+/* level title */
+
+.level-node p{
   margin-top:10px;
-}
-
-.lab-card button{
-  margin-top:15px;
-  padding:8px 16px;
-  border:none;
-  background:#4cc9f0;
-  border-radius:6px;
-  cursor:pointer;
-}
-
-.lab-label{
-  position:absolute;
   font-weight:600;
-  font-size:20px;
-
-  /* Sora / neon cyan color */
-  color:#22d3ee;
-
-  /* remove background */
-  background:none;
-
-  /* remove padding */
-  padding:0;
-
-  border:none;
-
-  /* glowing effect */
-  text-shadow:
-    0 0 6px rgba(34, 75, 238, 0.8),
-    0 0 12px rgba(34, 75, 238, 0.8),
-    0 0 20px rgba(34, 75, 238, 0.8);
-
-  letter-spacing:1px;
+  color:#222;
 }
 
-.lab-label:hover{
-  color:#678ef9;
-  text-shadow:
-    0 0 10px #678ef9,
-    0 0 20px #678ef9,
-    0 0 40px #678ef9;
+/* Z pattern positioning */
 
-  transform:scale(1.05);
+.level-node.left{
+  align-self:flex-start;
+  margin-left:220px;
+}
+
+.level-node.right{
+  align-self:flex-end;
+  margin-right:220px;
+}
+
+/* =========================
+   MODULES PAGE
+========================= */
+
+.modules-container{
+  background:#F4F4F2;
+  min-height:100vh;
+  padding:60px;
+  text-align:center;
+}
+
+.modules-container h1{
+  color:#48cae4;
+  font-size:40px;
+  margin-bottom:40px;
+}
+
+/* grid */
+
+.modules-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+  max-width:1100px;
+  margin:auto;
+}
+
+/* module card */
+
+.module-card{
+  border-radius:18px;
+  overflow:hidden;
+  background:white;
+  box-shadow:0 8px 25px rgba(0,0,0,0.12);
+  transition:0.3s;
+}
+
+.module-card:hover{
+  transform:translateY(-8px);
+}
+
+/* header */
+
+.module-header{
+  background:#7aa2ff;
+  padding:30px;
+  color:white;
+  text-align:left;
+}
+
+.module-header h2{
+  font-size:22px;
+  margin:0;
+}
+
+/* body */
+
+.module-body{
+  padding:25px;
+  text-align:left;
+}
+
+.module-body p{
+  color:#444;
+  margin-bottom:20px;
+}
+
+/* lesson info */
+
+.module-info{
+  display:flex;
+  justify-content:space-between;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+/* start button */
+
+.start-btn{
+  background:#48cae4;
+  border:none;
+  color:white;
+  padding:10px 20px;
+  border-radius:20px;
   cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.start-btn:hover{
+  background:#3bb7cf;
 }

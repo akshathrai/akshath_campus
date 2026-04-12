@@ -1,49 +1,52 @@
 import { useState } from "react";
 import "./CampusWorld.css";
 
-export default function CampusWorld(){
+export default function CampusWorld() {
 
-  const [selectedLab,setSelectedLab] = useState(null);
-
+  const [selectedLab, setSelectedLab] = useState(null);
+  
   const labs = {
-    python:{
-      title:"Python Lab",
-      description:"Practice Python basics, loops, data structures and algorithms.",
-      projects:["Calculator","Data Annoalyzer","Mini AI Bot"]
+    python: {
+      title: "Python Lab",
+      description: "Practice Python basics, loops, data structures and algorithms.",
+      projects: ["Calculator", "Data Analyzer", "Mini AI Bot"]
     },
 
-    java:{
-      title:"Java Lab",
-      description:"Learn OOP concepts and backend programming using Java.",
-      projects:["Student Manager","Bank System","REST API"]
+    java: {
+      title: "Java Lab",
+      description: "Learn OOP concepts and backend programming using Java.",
+      projects: ["Student Manager", "Bank System", "REST API"]
     },
 
-    arena:{
-      title:"Battle Arena",
-      description:"Solve coding challenges and compete with others.",
-      projects:["Algorithm Battles","Speed Coding","Hackathons"]
+    arena: {
+      title: "Battle Arena",
+      description: "Solve coding challenges and compete with others.",
+      projects: ["Algorithm Battles", "Speed Coding", "Hackathons"]
     }
-  }
+  };
 
-  return(
+  return (
     <div className="campus-world">
 
-      <img 
+      <img
         src="/assets/python-lab.png"
         className="building python"
-        onClick={()=>setSelectedLab(labs.python)}
+        alt="Python Lab"
+        onClick={() => setSelectedLab(labs.python)}
       />
 
-      <img 
+      <img
         src="/assets/java-lab.png"
         className="building java"
-        onClick={()=>setSelectedLab(labs.java)}
+        alt="Java Lab"
+        onClick={() => setSelectedLab(labs.java)}
       />
 
-      <img 
+      <img
         src="/assets/battle-arena.png"
         className="building arena"
-        onClick={()=>setSelectedLab(labs.arena)}
+        alt="Battle Arena"
+        onClick={() => setSelectedLab(labs.arena)}
       />
 
       {selectedLab && (
@@ -55,17 +58,17 @@ export default function CampusWorld(){
 
             <h4>Projects</h4>
             <ul>
-              {selectedLab.projects.map((p,i)=>(
+              {selectedLab.projects.map((p, i) => (
                 <li key={i}>{p}</li>
               ))}
             </ul>
 
-            <button onClick={()=>setSelectedLab(null)}>Close</button>
+            <button onClick={() => setSelectedLab(null)}>Close</button>
 
           </div>
         </div>
       )}
 
     </div>
-  )
+  );
 }

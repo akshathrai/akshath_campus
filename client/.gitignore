@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -8,23 +7,13 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Node
 node_modules
 dist
 dist-ssr
 *.local
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-=======
-# Python Cache
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -38,10 +27,10 @@ ENV/
 env.bak/
 venv.bak/
 
-# Node
-node_modules/
-
-# OS generated files
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
 .DS_Store?
 ._*
@@ -49,4 +38,8 @@ node_modules/
 .Trashes
 ehthumbs.db
 Thumbs.db
->>>>>>> 08d43c895bfc12856fcac92ff3fc8125dc11cddc
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

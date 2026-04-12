@@ -77,66 +77,15 @@ export default function Lab() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
- useEffect(() => {
-
-  const mockModules = [
-    {
-      id: 1,
-      order_number: 1,
-      title: "Python Basics",
-      description: "Learn variables and printing.",
-      challenges: [
-        {
-          id: 1,
-          order_number: 1,
-          title: "Hello World",
-          instructions: "Write a program to print Hello World."
-        },
-        {
-          id: 2,
-          order_number: 2,
-          title: "Variables",
-          instructions: "Create a variable and print it."
-        }
-      ]
-    },
-
-    {
-      id: 2,
-      order_number: 2,
-      title: "Conditions",
-      description: "Learn if and else.",
-      challenges: [
-        {
-          id: 3,
-          order_number: 1,
-          title: "Even or Odd",
-          instructions: "Check if a number is even."
-        }
-      ]
-    },
-
-    {
-      id: 3,
-      order_number: 3,
-      title: "Loops",
-      description: "Learn for and while loops.",
-      challenges: [
-        {
-          id: 4,
-          order_number: 1,
-          title: "Print Numbers",
-          instructions: "Print numbers from 1 to 10."
-        }
-      ]
-    }
-
-  ]
-
-  setModules(mockModules)
-  setLoading(false)
-
-}, [labId])
+  useEffect(() => {
+    fetch(`/api/labs/${labId}/modules`)
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        return res.json()
+      })
+      .then(data => { setModules(data); setLoading(false) })
+      .catch(err => { setError(err.message); setLoading(false) })
+  }, [labId])
 
   return (
     <div className="page">

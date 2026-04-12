@@ -1,30 +1,43 @@
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.module-card {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.module-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(72, 202, 228, 0.7);
+}
+
 .lab-page {
   min-height: 100vh;
-  background: #f6f9fc;   /* light white background */
+  background: linear-gradient(135deg, #0096C7, #48CAE4);
   padding: 40px;
 }
 
-.level-card{
-  background:white;
-  border-radius:14px;
-  padding:20px;
-  border:1px solid #e6edf5;
-  transition:0.3s;
+.lab-btn {
+  background: #48CAE4;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-.level-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+.lab-btn:hover {
+  background: #0096C7;
 }
 
-.btn-start-level{
-  background:#48CAE4;
-  color:white;
-  padding:10px 16px;
-  border-radius:8px;
-  text-decoration:none;
-}
-
-.btn-start-level:hover{
-  background:#0096C7;
+.progress-bar {
+  background: #48CAE4;
 }
